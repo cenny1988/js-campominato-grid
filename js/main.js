@@ -29,12 +29,11 @@ level3.addEventListener('click',
 );
 
 
-
 // creazione for 100 celle con numerazione interna
 function level1Grid(){
     let numCell = 100;
     for (i=0; i<numCell; i++) {
-        let square = createSquareWith2Class('square','ten')//richiama funz per creare div con 2 classi da passare
+        let square = createElementWith2Class('div','square','ten')//richiama funz per creare div con 2 classi da passare
 
         let squareSpan = document.createElement('span');//crea span con numero cella
         squareSpan.append(i+1);
@@ -50,7 +49,7 @@ function level1Grid(){
 function level2Grid(){
     let numCell = 81;
     for (i=0; i<numCell; i++) {
-        let square = createSquareWith2Class('square','nine')
+        let square = createElementWith2Class('div','square','nine')
 
         let squareSpan = document.createElement('span');
         squareSpan.append(i+1);
@@ -66,7 +65,7 @@ function level2Grid(){
 function level3Grid(){
     let numCell = 49;
     for (i=0; i<numCell; i++) {
-        let square = createSquareWith2Class('square','seven')
+        let square = createElementWith2Class('div','square','seven')
 
         let squareSpan = document.createElement('span');
         squareSpan.append(i+1);
@@ -79,8 +78,8 @@ function level3Grid(){
 }
 
 // crea elemento div con 2 classi da passare 
-function createSquareWith2Class(class1,class2){
-    let newSquare = document.createElement('div');
+function createElementWith2Class(elType,class1,class2){
+    let newSquare = document.createElement(elType);
     newSquare.classList.add(class1,class2);
     return newSquare
 }
