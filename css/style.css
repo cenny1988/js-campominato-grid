@@ -55,3 +55,6 @@ button{
     width: calc(100% / 7);
     height: calc(100% / 7);
 }
+.square.checked{
+    background-color: #fff;
+}
