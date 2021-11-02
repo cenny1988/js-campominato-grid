@@ -7,3 +7,36 @@
 body{
     background-color: cornflowerblue;
 }
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.container{
+    text-align: center;
+    padding: 10px;
+    height: 100vh;
+    /* debug */
+    /* border: 1px solid #fff; */
+}
+#chose-level{
+    width: 30%;
+    float: left;
+    /* debug */
+    border: 5px solid #000;
+    height: 100%;
+}
+button{
+    background-color: #fff;
+    font-size: 1.5rem;
+    padding: 5px;
+    display: block;
+    margin: 10px auto;
+}
+#container-game{
+    width: 70%;
+    float: left;
+    /* debug */
+    border: 5px solid #fff;
+    height: 100%;
+}
