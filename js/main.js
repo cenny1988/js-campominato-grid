@@ -55,6 +55,12 @@ function level2Grid(){
         squareSpan.append(i+1);
         
         square.appendChild(squareSpan);
+
+        square.addEventListener('click',
+            function(){
+                this.classList.add('checked');
+            }
+        );
         
         grid.appendChild(square);
     
@@ -73,7 +79,8 @@ function level3Grid(){
         square.appendChild(squareSpan);
         
         grid.appendChild(square);
-    
+        
+        
     }
 }
 
