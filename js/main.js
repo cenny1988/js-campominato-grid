@@ -14,73 +14,47 @@ const level2 = document.getElementById('level2');
 const level3 = document.getElementById('level3');
 const grid = document.getElementById('grid');
 
+
+// scelta utente
 level1.addEventListener('click',
-    level1Grid
+    function() {
+        generateGrid(100, 'ten')
+    }
 );
 
 level2.addEventListener('click',
     //funzione crea 81 celle
-    level2Grid
+    function() {
+        generateGrid(81, 'nine')
+    }
 );
 
 level3.addEventListener('click',
     //funzione crea 49 celle
-    level3Grid
+    function() {
+        generateGrid(49, 'seven')
+    }
 );
 
-
-// creazione for 100 celle con numerazione interna
-function level1Grid(){
-    let numCell = 100;
+// creazione griglia celle con numerazione interna
+function generateGrid(numCell, helperClass){
     for (i=0; i<numCell; i++) {
-        let square = createElementWith2Class('div','square','ten')//richiama funz per creare div con 2 classi da passare
+        let square = createElementWith2Class('div','square',helperClass)//richiama funz per creare div con 2 classi da passare
 
         let squareSpan = document.createElement('span');//crea span con numero cella
         squareSpan.append(i+1);
         
         square.appendChild(squareSpan);//appendi span nella cella
-        
-        grid.appendChild(square);//appendi cella nella griglia
-    
-    }
-}
 
-// creazione for 81 celle con numerazione interna
-function level2Grid(){
-    let numCell = 81;
-    for (i=0; i<numCell; i++) {
-        let square = createElementWith2Class('div','square','nine')
-
-        let squareSpan = document.createElement('span');
-        squareSpan.append(i+1);
-        
-        square.appendChild(squareSpan);
-
+        // evento click sulla cella singola che aggiunge classe checked
         square.addEventListener('click',
             function(){
                 this.classList.add('checked');
             }
         );
         
-        grid.appendChild(square);
+        grid.appendChild(square);//appendi cella nella griglia
     
-    }
-}
-
-// creazione for 49 celle con numerazione interna
-function level3Grid(){
-    let numCell = 49;
-    for (i=0; i<numCell; i++) {
-        let square = createElementWith2Class('div','square','seven')
-
-        let squareSpan = document.createElement('span');
-        squareSpan.append(i+1);
-        
-        square.appendChild(squareSpan);
-        
-        grid.appendChild(square);
-        
-        
     }
 }
 
@@ -91,3 +65,10 @@ function createElementWith2Class(elType,class1,class2){
     return newSquare
 }
 
+/*
+function somma(a, b) {
+    return a + b;
+}
+
+const somma = (a, b) => a+b;
+*/
