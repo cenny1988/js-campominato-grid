@@ -9,6 +9,43 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro (
 
 // user sceglie il livello del gioco cliccando sul bottone relativo
 // quindi in base al livello la griglia avrà 100 81 o 49 celle.
+const level1 = document.getElementById('level1');
+const level2 = document.getElementById('level2');
+const level3 = document.getElementById('level3');
+const grid = document.getElementById('grid');
 
-//cicliamo la creazione di celle in base alla scelta
+level1.addEventListener('click',
+    level1Grid
+);
+
+// level2.addEventListener('click',
+//     //funzione crea 81 celle
+// );
+
+// level3.addEventListener('click',
+//     //funzione crea 49 celle
+// );
+
+
+
+// creazione for 100 celle con numerazione interna
+function level1Grid(){
+    for (i=0; i<100; i++) {
+        let square = createSquareWith2Class('square','ten')
+
+        let squareSpan = document.createElement('span');
+        squareSpan.append(i+1);
+        
+        square.appendChild(squareSpan);
+        
+        grid.appendChild(square);
+    
+    }
+}
+
+function createSquareWith2Class(class1,class2){
+    let newSquare = document.createElement('div');
+    newSquare.classList.add(class1,class2);
+    return newSquare
+}
 

@@ -42,7 +42,14 @@ button{
 .square{
     border: #fff 1px solid;
     cursor: pointer;
+    color: #000;
+    text-align: left;
+    font-size: .7rem;
 }
+.square>span{
+    display: none;
+}
+
 .square.ten{
     width: calc(100% / 10);
     height: calc(100% / 10);
@@ -57,4 +64,7 @@ button{
 }
 .square.checked{
     background-color: #fff;
+}
+.square.checked>span{
+    display: block;
 }
