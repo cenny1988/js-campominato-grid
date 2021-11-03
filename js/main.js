@@ -17,27 +17,20 @@ const grid = document.getElementById('grid');
 
 // scelta utente
 level1.addEventListener('click',
-    function() {
-        generateGrid(100, 'ten')
-    }
+    ()=> generateGrid(100, 'ten')
 );
 
 level2.addEventListener('click',
-    //funzione crea 81 celle
-    function() {
-        generateGrid(81, 'nine')
-    }
+    ()=> generateGrid(81, 'nine')
 );
 
 level3.addEventListener('click',
-    //funzione crea 49 celle
-    function() {
-        generateGrid(49, 'seven')
-    }
+    ()=> generateGrid(49, 'seven')
 );
 
 // creazione griglia celle con numerazione interna
 function generateGrid(numCell, helperClass){
+    grid.innerHTML = ""; // reset griglia!
     for (i=0; i<numCell; i++) {
         let square = createElementWith2Class('div','square',helperClass)//richiama funz per creare div con 2 classi da passare
 
@@ -54,7 +47,6 @@ function generateGrid(numCell, helperClass){
         );
         
         grid.appendChild(square);//appendi cella nella griglia
-    
     }
 }
 
@@ -64,11 +56,3 @@ function createElementWith2Class(elType,class1,class2){
     newSquare.classList.add(class1,class2);
     return newSquare
 }
-
-/*
-function somma(a, b) {
-    return a + b;
-}
-
-const somma = (a, b) => a+b;
-*/
